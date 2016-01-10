@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>SHINE</title>
+
+<link rel="stylesheet" type="text/css" href="css/tipped/tipped.css"/>
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<link href="css/buttons.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/tipped/tipped.js"></script>
+<script src="js/buttons.js"></script>
+
+<script type="text/javascript" src="js/AltraLib.js"></script>
+<script type="text/javascript" src="js/doppler.js"></script>
+</head>
+<body>
+<div id="header">
+ <div id="nav">
+  <ul>
+   <li><a href="index.html">SHINE</a></li>
+  </ul>
+ </div>
+</div>
+<div id="headSpacer"></div>
+
+
+<div id="main">
+ <h1>The Doppler Effect</h1>
+ <p>Below is the Soyuz spacecraft with the sound waves it produces shown (while it is in atmosphere or you can think of it as its radio waves if it is in space). Try changing its speed by moving the green slider.</p>
+ <canvas id="graph" width="1000" height="400" style="border:2px solid #2D2E2E; background-color:white;">Your browser does not support canvas.</canvas>
+ <p id="reset" style="left:20px; top:440px; position:absolute; font-size:35px; color:red; opacity:0;">Reset</p>
+ <div id="sliderBarSpacer">
+  <div id="sliderBar" style=" border-radius: 10px; border: 4px solid #73AD21; width: 222px; height: 12px; left:200px; top:580px; position:absolute; background-color: #e8fbcd;"></div>
+  <img src="Images/Slider.png" id="slider" style="height:20px; width:40px; left:200px; top:580px; position:absolute;"> </img>
+ </div>
+ <p id="dcom">Comment</p>
+ 
+ <p style="font-size:13px;">The doppler effect is commonly noticed when the pitch of the sound waves from a vehicle changes as it drives past but it affects all waves, including EM (Light)...</p>
+ <br>
+ </br>
+ <a href="sound.html" class="normbutton">Back</a>
+ <a href="redshift.html" class="normbutton">Next</a>
+</div>
+</body>
+</html>
