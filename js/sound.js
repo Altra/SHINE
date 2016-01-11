@@ -22,7 +22,6 @@ function removeWave(){
 
 function updateSound(){
 
- freq = getFreq(slider,190);
  useFreq = (1/freq)*200000;
  ctxD.clearRect(0, 0, cD.width, cD.height);
  if (waveSpawnTime > useFreq) {
@@ -136,16 +135,7 @@ function showAxes(ctx,axes) {
  ctxW.moveTo(0,y0);    ctxW.lineTo(w,y0);  // X axis
  ctxW.moveTo(x0,0);    ctxW.lineTo(x0,h);  // Y axis
  ctxW.stroke();
- }   
-
-function getFreq(slider,width){
- per = (parseInt(slider.style.left)-200)/width;
- per = per*20000;
- if (per < 1) {
- per = 1000;
  }
- return per;
-}
 
 function startSound(){
  waves = [];
@@ -165,8 +155,6 @@ ctxW = cW.getContext("2d");
  d2com = document.getElementById('d2com');
  d3com = document.getElementById('d3com');
 
- new Slider(document.getElementById('slider'), 200, 390, "Images/Slider");
- slider = document.getElementById('slider');
  
  updateSound();
 }
@@ -177,5 +165,11 @@ window.onload = function(){
                             window.mozRequestAnimationFrame || 
                             window.webkitRequestAnimationFrame || 
                             window.msRequestAnimationFrame;
+  freq=0;
+  new Dragdealer('simple-slider', {animationCallback: function(x,y){
+  x = x*20000;
+  if (x < 1000) {x = 1000;}
+  freq = x;
+ }});
  startSound();
 }

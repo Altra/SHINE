@@ -2,7 +2,6 @@
 //  Redshift.js
 
 function updateSpectra() {
-	z = getSlider(sliderSpec,300);
 	if (z == lastSliderSpec){
 	 requestAnimationFrame(updateSpectra);
 	 return;
@@ -73,11 +72,6 @@ function drawSpectra(l, ctxS) {
 	ctxS.fillRect(305 + x,y,3,40);
 }
 
-function getSlider(sliderSpec,width){
- perS = (parseInt(sliderSpec.style.left)-230)/width;
- return 12*(perS - 0.5);
-}
-
 function startSpec(){
  cS = document.getElementById("spectra");
  ctxS = cS.getContext("2d");
@@ -86,8 +80,6 @@ function startSpec(){
  com2 = document.getElementById('com2');
  com3 = document.getElementById('com3');
  
- new Slider(document.getElementById('sliderSpec'), 230, 530, "Images/Slider");
- sliderSpec = document.getElementById('sliderSpec');
  lastSliderSpec = 999;
  
   requestAnimationFrame = window.requestAnimationFrame || 
@@ -101,5 +93,7 @@ function startSpec(){
 window.onload = function(){
   Maths = Math;
  $(document).ready(function() {Tipped.create('.inline');});
+ z=0;
+ new Dragdealer('simple-slider', {animationCallback: function(x,y){z= 12*(x - 0.5);}});
  startSpec();
 }
