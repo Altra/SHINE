@@ -9,9 +9,9 @@
 
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="js/tipped/tipped.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dragdealer/0.9.8/dragdealer.min.js"></script>
 <script src="js/buttons.js"></script>
 
-<script type="text/javascript" src="js/AltraLib.js"></script>
 <script type="text/javascript" src="js/sound.js"></script>
 </head>
 <body>
@@ -28,16 +28,17 @@
 <div id="main">
  <h1>Sound</h1>
  <p>Sound is a pressure wave, like all waves it transfers energy without transferring matter. It requires a medium (A liquid, solid or gas) which means that it can not travel through a vacuum, unlike EM waves. It is a longitudinal wave, the transfer of energy is parallel to the direction of motion.</p>
- <div style="height:450px">
+ <div style="height:400px">
  <canvas id="speaker" width="400" height="400" style="border:2px solid #2D2E2E; background-color:white; left:40px; top:155px; position:absolute;">Your browser does not support canvas.</canvas>
   <canvas id="wave" width="300" height="150" style="border:2px solid #2D2E2E; background-color:white; left:450px; top:155px; position:absolute;">Your browser does not support canvas.</canvas>
-  <div id="sliderBar" style=" border-radius: 10px; border: 4px solid #73AD21; width: 222px; height: 12px; left:200px; top:580px; position:absolute; background-color: #e8fbcd;"></div>
-  <img src="Images/Slider.png" id="slider" style="height:20px; width:40px; left:200px; top:580px; position:absolute;"> </img>
   <p id="dcom" style="left:460px; top:325px; position:absolute;">Freq</p>
   <p id="d2com" style="left:565px; top:338px; position:absolute;">length</p>
   <p style="left:572px; top:319px; position:absolute; text-decoration: underline;">343m/s</p>
   <img class='inline' src="Images/equ.png" style="left:680px; top:335px; position:absolute;"></img>
   <p id="d3com" style="left:450px; top:360px; position:absolute;">comm</p>
+ </div>
+  <div id="simple-slider" class="dragdealer" style="width:700px;">
+    <div class="handle red-bar"></div>
  </div>
    <p>Above are two diagrams showing the same sound wave. You can move the green slider to change the frequency (pitch) of the wave. One shows how the wave expands from its source (it expands in a sphere, so this shows a cross section) and the other shows what it would look like on an oscilloscope. Although sound is a longitudinal wave we can still graph it in this way as it is more helpful. Think about what values you can get from the oscilloscope if it had labeled axis. </p>
   <p>The equation above shows frequency (in Hertz, Hz) equals the velocity of the wave (in meters per second, m/s) divided by the wavelength (in metres, m. The symbol of wavelength is the lowercase lambda). Notice that for our sound wave traveling through room temperature air the waves speed will be constant, so frequency and wavelength are proportional (Thats why you can change the wavelength even though the slider changes the frequency).</p>

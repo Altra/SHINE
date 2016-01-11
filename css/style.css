@@ -56,14 +56,38 @@
 	border: 2px solid #73AD21;
 }
 
-#sliderBarSpacer{
-	height:35px;
-	width:100%;
-}
-
 body {
  text-align: center;
  font-family: 'Roboto', serif;
  font-size:15px;
  background-color:#e3e3e8;
+}
+
+
+.dragdealer {
+  position: relative;
+  height: 30px;
+  background: #EEE;
+  border-radius: 5px;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+   }
+.dragdealer .handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+.dragdealer .red-bar {
+  width: 60px;
+  height: 30px;
+  background: #73AD21;
+  border-radius: 5px;
+  color: #FFF;
+  line-height: 30px;
+  text-align: center;
+}
+.dragdealer .disabled {
+  background: #898989;
 }

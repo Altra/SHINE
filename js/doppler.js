@@ -21,8 +21,7 @@ function removeWave(){
 }
 
 function updateDoppler(){
-
- objectSpeed = getSpeed(slider,190);
+    
  objPos += objectSpeed;
 
  ctxD.clearRect(0, 0, cD.width, cD.height);
@@ -65,9 +64,8 @@ function updateDoppler(){
   requestAnimationFrame(updateDoppler);
 }
 
-function getSpeed(slider,width){
- per = (parseInt(slider.style.left)-200)/width;
- return per * 1.7;
+function setSpeed(x,y){
+ objectSpeed = x * 1.7;
 }
 
 function resetText(){
@@ -84,7 +82,6 @@ function startDop(){
  waveRemoveDelayTime = 0;
  removeWaves = false;
  waveSpeed = 2;
- objectSpeed = 0;
  soyuz = new Image();
  soyuz.src = 'Images/Soyuz.png';
 
@@ -93,9 +90,6 @@ function startDop(){
  dcom = document.getElementById('dcom');
  d2com = document.getElementById('d2com');
  rtxt = document.getElementById('reset');
-
- new Slider(document.getElementById('slider'), 200, 390, "Images/Slider");
- slider = document.getElementById('slider');
  
  updateDoppler();
 }
@@ -106,5 +100,7 @@ window.onload = function(){
                             window.mozRequestAnimationFrame || 
                             window.webkitRequestAnimationFrame || 
                             window.msRequestAnimationFrame;
+   objectSpeed = 0;
+  new Dragdealer('simple-slider', {animationCallback: function(x,y){objectSpeed = x * 1.7;}});
  startDop();
 }
