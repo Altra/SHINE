@@ -454,6 +454,7 @@ function start(){
 	    dragging=false;
 	    mouseReleased=true;
             mouseDown = false;
+            evt.preventDefault();
       }, false);
 	
 	requestAnimationFrame = window.requestAnimationFrame || 
