@@ -271,6 +271,14 @@ function pointInBox(px,py,bx,by,l,h) {
     return false;
 }
 
+function getTouchPos(evt){
+touch = evt.targetTouches[0];
+var rect = c.getBoundingClientRect();
+    return {
+		x: touch.pageX - rect.left,
+		y: tough.pageY - rect.top
+    };
+}
  function getMousePos(evt) {
     var rect = c.getBoundingClientRect();
     return {
@@ -281,7 +289,7 @@ function pointInBox(px,py,bx,by,l,h) {
 
  function mouseDownListener(evt) {
  	mouseDown=true;
- 	mousePos=getMousePos(evt);
+ 	
  	
  	//find which dog was clicked
 	for (i=0; i < dogs.length; i++) {
@@ -309,17 +317,11 @@ function pointInBox(px,py,bx,by,l,h) {
 			
 			updateDrag = true;
 		}
-		//code below prevents the mouse down from having an effect on the main browser window:
-		if (evt.preventDefault) {
-			evt.preventDefault();
-		} //standard
-		else if (evt.returnValue) {
-			evt.returnValue = false;
-		} //older IE
-		return false;
+	
  }
  
  function mouseMoveListener(evt) {
+   
        mousePos=getMousePos(evt);
        if(dragging){
         
@@ -353,14 +355,7 @@ function pointInBox(px,py,bx,by,l,h) {
 		//	}
 		}
 	}
-		//code below prevents the mouse down from having an effect on the main browser window:
-		if (evt.preventDefault) {
-			evt.preventDefault();
-		} //standard
-		else if (evt.returnValue) {
-			evt.returnValue = false;
-		} //older IE
-		return false;
+		
  }
  
  function hitTest(dog){
@@ -440,8 +435,20 @@ function start(){
 		wheelDelta = Math.max(-1, Math.min(1, (evt.wheelDelta || -evt.detail))); 
 	 },false);
 
-        c.addEventListener('touchmove', mouseMoveListener, false);
-         c.addEventListener('touchstart', mouseDownListener, false);
+        c.addEventListener('touchmove', function(evt){ mousePos= getTouchPos(evt); mouseMoveListener(evt); if(evt.targetTouches.length==1){if (evt.preventDefault) {
+			evt.preventDefault();
+		} //standard
+		else if (evt.returnValue) {
+			evt.returnValue = false;
+		} //older IE
+		return false;}}, false);
+         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt)  if(evt.targetTouches.length==1){if (evt.preventDefault) {
+			evt.preventDefault();
+		} //standard
+		else if (evt.returnValue) {
+			evt.returnValue = false;
+		} //older IE
+		return false;}}, false);
 	  c.addEventListener('touchend', function(evt) {
 	    dragging=false;
 	    mouseReleased=true;
