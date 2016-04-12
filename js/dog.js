@@ -335,7 +335,6 @@ var rect = c.getBoundingClientRect();
  
  function mouseMoveListener(evt) {
    
-       mousePos=getMousePos(evt);
        if(dragging){
         
        //clamp x and y positions to prevent object from dragging outside of canvas
