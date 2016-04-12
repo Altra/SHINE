@@ -43,7 +43,7 @@ function updateDoppler(){
  }
  
  drawGraph();
- ctxD.drawImage(soyuz,objPos-55,170);
+ ctxD.drawImage(soyuz,objPos-55,170); 
 
  resetText();
 
