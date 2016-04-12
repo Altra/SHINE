@@ -2,11 +2,19 @@ function update() {
 
 	 ctx.fillStyle='97b6d2';
 	 ctx.fillRect(0,0,c.width, c.height);
-	 
+
+	if(delayTime < 90){
+	 ctx.font = "30px Arial";
+	 ctx.fillStyle='black';
+    	 ctx.fillText("Loading",cx-20,cy);
+    	 delayTime++;
+	} else {
+
 	drawGUI();
 	drawDogs();
 	if(updateDrag) { drag(); }
 	
+	}
 	
 	time++;
         mouseReleased=false; 
@@ -389,6 +397,7 @@ function start(){
  	
  	
 	time = 0;
+	delayTime = 0;
 	cx = c.width/2;
 	cy = c.height/2;
 	mousePos={x:0,y:0};
@@ -462,7 +471,8 @@ function start(){
 
  	//dogPattern=imgToPixles(dogPatternImg);
  	dogBase = imgToPixles(dogBaseImg);
- 
+
+ 	
 	update();
 }
 
