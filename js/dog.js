@@ -442,7 +442,7 @@ function start(){
 			evt.returnValue = false;
 		} //older IE
 		return false;}}, false);
-         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt)  if(evt.targetTouches.length==1){if (evt.preventDefault) {
+         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt);  if(evt.targetTouches.length==1){if (evt.preventDefault) {
 			evt.preventDefault();
 		} //standard
 		else if (evt.returnValue) {
