@@ -448,20 +448,20 @@ function start(){
 		wheelDelta = Math.max(-1, Math.min(1, (evt.wheelDelta || -evt.detail))); 
 	 },false);
 
-        c.addEventListener('touchmove', function(evt){ mousePos= getTouchPos(evt); mouseMoveListener(evt); if(evt.targetTouches.length==1){if (evt.preventDefault) {
+        c.addEventListener('touchmove', function(evt){ mousePos= getTouchPos(evt); mouseMoveListener(evt);if (evt.preventDefault) {
 			evt.preventDefault();
 		} //standard
 		else if (evt.returnValue) {
 			evt.returnValue = false;
 		} //older IE
-		return false;}}, false);
-         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt);  if(evt.targetTouches.length==1){if (evt.preventDefault) {
+		return false;}, false);
+         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt);  if (evt.preventDefault) {
 			evt.preventDefault();
 		} //standard
 		else if (evt.returnValue) {
 			evt.returnValue = false;
 		} //older IE
-		return false;}}, false);
+		return false;}, false);
 	  c.addEventListener('touchend', function(evt) {
 	    dragging=false;
 	    mouseReleased=true;
