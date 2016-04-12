@@ -285,7 +285,7 @@ function pointInBox(px,py,bx,by,l,h) {
 }
 
 function getTouchPos(evt){
-touch = evt.targetTouches[0];
+touch = evt.touches[0];
 var rect = c.getBoundingClientRect();
     return {
 		x: touch.pageX - rect.left,
