@@ -439,6 +439,14 @@ function start(){
 	 c.addEventListener('mousewheel', function(evt) {
 		wheelDelta = Math.max(-1, Math.min(1, (evt.wheelDelta || -evt.detail))); 
 	 },false);
+
+        c.addEventListener('touchmove', mouseMoveListener, false);
+         c.addEventListener('touchstart', mouseDownListener, false);
+	  c.addEventListener('touchend', function(evt) {
+	    dragging=false;
+	    mouseReleased=true;
+            mouseDown = false;
+      }, false);
 	
 	requestAnimationFrame = window.requestAnimationFrame || 
                             window.mozRequestAnimationFrame || 
