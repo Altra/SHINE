@@ -309,7 +309,14 @@ function pointInBox(px,py,bx,by,l,h) {
 			
 			updateDrag = true;
 		}
-    return false;
+		//code below prevents the mouse down from having an effect on the main browser window:
+		if (evt.preventDefault) {
+			evt.preventDefault();
+		} //standard
+		else if (evt.returnValue) {
+			evt.returnValue = false;
+		} //older IE
+		return false;
  }
  
  function mouseMoveListener(evt) {
