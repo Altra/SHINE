@@ -8,7 +8,10 @@ function update() {
 	 ctx.fillStyle='black';
     	 ctx.fillText("Loading",cx-20,cy);
     	 delayTime++;
-	} else {
+	} else if (delayTime != 91){
+		dogBase = imgToPixles(dogBaseImg);
+		delayTime = 91;
+	}else{
 
 	drawGUI();
 	drawDogs();
@@ -470,7 +473,7 @@ function start(){
                             window.msRequestAnimationFrame;
 
  	//dogPattern=imgToPixles(dogPatternImg);
- 	dogBase = imgToPixles(dogBaseImg);
+
 
  	
 	update();
