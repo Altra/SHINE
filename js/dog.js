@@ -1,12 +1,12 @@
 function update() {
 
-	 ctx.fillStyle='97b6d2';
+	 ctx.fillStyle='rgb(151, 182, 210)';
 	 ctx.fillRect(0,0,c.width, c.height);
 
 	if(delayTime < 90){
-	 ctx.font = "30px Arial";
+	 ctx.font = "50px Arial";
 	 ctx.fillStyle='black';
-    	 ctx.fillText("Loading",cx-20,cy);
+    	 ctx.fillText(delayTime>70 ? "Loading..." : delayTime>45 ? 'Loading..' : delayTime>20 ? 'Loading.' : 'Loading',cx-30,cy-5);
     	 delayTime++;
 	} else if (delayTime != 91){
 		dogBase = imgToPixles(dogBaseImg);
