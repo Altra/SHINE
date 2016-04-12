@@ -424,8 +424,8 @@ function start(){
 	dogs[1] = {x:500, y:150, phen:0, genes:randomGenes()};
 	dogs[1].phen = genesToPhenotype(dogs[1].genes);
 
-	 c.addEventListener('mousemove',mouseMoveListener, false);
-	  c.addEventListener('mousedown', mouseDownListener, false);
+	 c.addEventListener('mousemove',function(evt){ mousePos= getMousePos(evt); mouseMoveListener(evt);}, false);
+	  c.addEventListener('mousedown',function(evt){ mousePos= getMousePos(evt); mouseDownListener(evt);}, false);
 	  c.addEventListener('mouseup', function(evt) {
 	    dragging=false;
 	    mouseReleased=true;
