@@ -36,8 +36,10 @@ function drawGUI(){
 		//ctx.fillRect(c.width-175,410,dogWidth+5, dogHeight+5);
 		
 		button = {x: 420, y: 340, width: 70, height: 100, state: (dogInBox && dogInBoxt) ? (checkOutForDog() ? 3 : 0) : 3, col: ['blue','darkBlue','darkGreen','grey'], text: 'Combine', onPress: createNewDog};
-		
+		resetButton = {x: (c.width-52), y: (c.height-22), width: 50, height: 20, state: 0, col: ['blue','darkBlue','darkGreen','grey'], text: 'Reset', onPress: start};
+	
 		drawButton(button);
+		drawButton(resetButton);
 		
 		if(dogInBox){
 			drawInfo(dogs[inBoxID],50,500);
