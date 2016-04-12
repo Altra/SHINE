@@ -289,7 +289,7 @@ touch = evt.touches[0];
 var rect = c.getBoundingClientRect();
     return {
 		x: touch.clientX - rect.left,
-		y: tough.clientY - rect.top
+		y: touch.clientY - rect.top
     };
 }
  function getMousePos(evt) {
