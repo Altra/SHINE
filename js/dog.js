@@ -402,7 +402,6 @@ function start(){
  	
  	
 	time = 0;
-	delayTime = 0;
 	cx = c.width/2;
 	cy = c.height/2;
 	mousePos={x:0,y:0};
@@ -483,5 +482,6 @@ function start(){
 
 window.onload = function(){
 	$(document).ready(function() {Tipped.create('.inline');});
+	delayTime=0;
 	start();
 }
