@@ -447,14 +447,14 @@ function start(){
 		wheelDelta = Math.max(-1, Math.min(1, (evt.wheelDelta || -evt.detail))); 
 	 },false);
 
-        c.addEventListener('touchmove', function(evt){ if(evt.touches.length == 1){ mousePos= getTouchPos(evt); mouseMoveListener(evt);evt.preventDefault();}}, false);
-         c.addEventListener('touchstart', function(evt){  if(evt.touches.length == 1){  mousePos= getTouchPos(evt); mouseDownListener(evt);  evt.preventDefault();}}, false);
-	  c.addEventListener('touchend', function(evt) { if(evt.touches.length == 1){ 
+        c.addEventListener('touchmove', function(evt){ mousePos= getTouchPos(evt); mouseMoveListener(evt);evt.preventDefault();}, false);
+         c.addEventListener('touchstart', function(evt){   mousePos= getTouchPos(evt); mouseDownListener(evt);  evt.preventDefault();}, false);
+	  c.addEventListener('touchend', function(evt) { 
 	    dragging=false;
 	    mouseReleased=true;
             mouseDown = false;
             evt.preventDefault();
-      }}, false);
+      }, false);
 	
 	requestAnimationFrame = window.requestAnimationFrame || 
                             window.mozRequestAnimationFrame || 
