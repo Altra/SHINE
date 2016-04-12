@@ -448,7 +448,7 @@ function start(){
 	 },false);
 
         c.addEventListener('touchmove', function(evt){ mousePos= getTouchPos(evt); mouseMoveListener(evt);evt.preventDefault();}, false);
-         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt);  if (evt.preventDefault) evt.preventDefault();}, false);
+         c.addEventListener('touchstart', function(evt){ mousePos= getTouchPos(evt); mouseDownListener(evt);  evt.preventDefault();}, false);
 	  c.addEventListener('touchend', function(evt) {
 	    dragging=false;
 	    mouseReleased=true;
